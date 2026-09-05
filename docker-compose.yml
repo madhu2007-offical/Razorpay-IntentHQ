@@ -1,0 +1,38 @@
+version: "3.8"
+
+services:
+  core-engine:
+    build:
+      context: ./core-engine
+      dockerfile: Dockerfile
+    container_name: intenthq-core
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+      - HOST=0.0.0.0
+      - ENV=production
+      - MAX_VERIFY_LATENCY_MS=45.0
+      - RAZORPAY_MOCK_MODE=True
+      - RAZORPAY_KEY_ID=rzp_test_intenthq_mock_key
+      - RAZORPAY_KEY_SECRET=rzp_test_intenthq_mock_secret
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/healthz"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    restart: unless-stopped
+
+  client-arena:
+    build:
+      context: ./client-arena
+      dockerfile: Dockerfile
+    container_name: intenthq-client
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:8000/v1
+      - NODE_ENV=production
+    depends_on:
+      - core-engine
+    restart: unless-stopped

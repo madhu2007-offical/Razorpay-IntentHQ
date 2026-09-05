@@ -1,0 +1,54 @@
+{
+  "timestamp": 1788527844,
+  "total_cases": 105,
+  "accuracy_pct": 100.0,
+  "sla_target_p99_ms": 45.0,
+  "sla_passed": true,
+  "latency_metrics": {
+    "mean_ms": 4.792,
+    "p50_ms": 2.001,
+    "p90_ms": 19.444,
+    "p95_ms": 21.616,
+    "p99_ms": 25.166,
+    "max_ms": 42.125
+  },
+  "subsystem_profile_mean_ms": {
+    "crypto_ed25519": 0.218,
+    "z3_smt_solver": 1.853,
+    "neural_onnx_drift": 2.551,
+    "arbiter_matrix": 0.006,
+    "merkle_rfc6962": 0.16
+  },
+  "category_breakdown": {
+    "clean_legitimate": {
+      "total": 25,
+      "passed": 25,
+      "accuracy_pct": 100.0,
+      "p95_latency_ms": 22.45
+    },
+    "specification_downgrade": {
+      "total": 25,
+      "passed": 25,
+      "accuracy_pct": 100.0,
+      "p95_latency_ms": 22.9
+    },
+    "accounting_merchant_invariant": {
+      "total": 20,
+      "passed": 20,
+      "accuracy_pct": 100.0,
+      "p95_latency_ms": 5.07
+    },
+    "prompt_injection": {
+      "total": 20,
+      "passed": 20,
+      "accuracy_pct": 100.0,
+      "p95_latency_ms": 3.79
+    },
+    "unsolicited_bundling_drift": {
+      "total": 15,
+      "passed": 15,
+      "accuracy_pct": 100.0,
+      "p95_latency_ms": 19.6
+    }
+  }
+}
