@@ -102,24 +102,24 @@ if (result.decision === "ALLOW") {
               <span>Developer-First Integration</span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight font-sans">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-[-0.02em] font-sans">
               Integrate in Minutes. Verify in Microseconds.
             </h2>
 
-            <p className="text-base text-[#CBD5E1] leading-relaxed">
+            <p className="text-[16px] sm:text-[17px] text-[#CBD5E1] leading-[1.6]">
               Drop IntentHQ directly into your agentic purchasing workflows or merchant checkout pipelines. A single synchronous API call guarantees that every payment is mathematically and cryptographically aligned with human intent.
             </p>
 
             <div className="space-y-3.5 pt-2">
-              <div className="flex items-center space-x-3 text-sm text-[#CBD5E1]">
+              <div className="flex items-center space-x-3 text-[15px] sm:text-[16px] text-[#CBD5E1] leading-[1.6]">
                 <CheckCircle2 className="w-5 h-5 text-[#00D09C] flex-shrink-0" />
                 <span>Strict P99 latency SLA strictly under 45ms (Average: 25.17ms)</span>
               </div>
-              <div className="flex items-center space-x-3 text-sm text-[#CBD5E1]">
+              <div className="flex items-center space-x-3 text-[15px] sm:text-[16px] text-[#CBD5E1] leading-[1.6]">
                 <CheckCircle2 className="w-5 h-5 text-[#00D09C] flex-shrink-0" />
                 <span>Automatic RFC 6962 append-only Merkle inclusion certificate</span>
               </div>
-              <div className="flex items-center space-x-3 text-sm text-[#CBD5E1]">
+              <div className="flex items-center space-x-3 text-[15px] sm:text-[16px] text-[#CBD5E1] leading-[1.6]">
                 <CheckCircle2 className="w-5 h-5 text-[#00D09C] flex-shrink-0" />
                 <span>Zero external LLM API dependencies in the hot decision path</span>
               </div>

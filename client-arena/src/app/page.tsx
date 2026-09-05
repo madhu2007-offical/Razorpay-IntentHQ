@@ -78,14 +78,14 @@ export default function Home() {
             </div>
 
             {/* Benefit-Driven Large Headline (48-64px) */}
-            <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight font-sans">
+            <h1 className="text-4xl sm:text-6xl font-extrabold tracking-[-0.02em] text-white leading-tight font-sans">
               Sell in India. <br />
               <span className="text-[#3395FF]">Verify Every Intent.</span> Settle Globally.
             </h1>
 
-            {/* Medium-weight body text (16-18px) */}
-            <p className="text-base sm:text-lg text-[#CBD5E1] max-w-2xl mx-auto leading-relaxed">
-              When autonomous purchasing AI agents execute payments on your gateway, <strong className="text-white">Authorization != Intent</strong>. IntentHQ inline verifies transactions with Microsoft Z3 formal theorem proving and quantized ONNX embeddings before funds leave Razorpay.
+            {/* Medium-weight body text (16-18px, line-height 1.6) */}
+            <p className="text-[16px] sm:text-[18px] font-normal sm:font-medium text-[#CBD5E1] max-w-2xl mx-auto leading-[1.6]">
+              When autonomous purchasing AI agents execute payments on your gateway, <strong className="text-white font-semibold">Authorization != Intent</strong>. IntentHQ inline verifies transactions with Microsoft Z3 formal theorem proving and quantized ONNX embeddings before funds leave Razorpay.
             </p>
 
             {/* CTAs */}
@@ -147,10 +147,10 @@ export default function Home() {
             <span className="text-xs font-bold uppercase tracking-widest text-[#3395FF] font-mono">
               Live Inline Control Plane
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight font-sans">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-[-0.02em] font-sans">
               Interactive Red-Team Arena &amp; Telemetry
             </h2>
-            <p className="text-base text-[#CBD5E1]">
+            <p className="text-[16px] sm:text-[17px] text-[#CBD5E1] leading-[1.6]">
               Simulate real-time purchasing AI agent payloads against the inline Zero-Trust control plane. Experience formal Z3 mathematical invariant proofs, quantized ONNX semantic drift detection, and RFC 6962 Merkle tree commits.
             </p>
           </div>
@@ -198,11 +198,11 @@ export default function Home() {
             Get Started In Minutes
           </span>
 
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight font-sans">
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-[-0.02em] font-sans">
             Ready to Protect Autonomous Agent Payments?
           </h2>
 
-          <p className="text-base sm:text-lg text-[#CBD5E1] max-w-2xl mx-auto">
+          <p className="text-[16px] sm:text-[18px] text-[#CBD5E1] max-w-2xl mx-auto leading-[1.6] font-normal sm:font-medium">
             Join thousands of enterprises securing agentic commerce with Razorpay IntentHQ. Sub-45ms latency, formal SMT mathematical guarantees, and seamless sandbox dispatch.
           </p>
 

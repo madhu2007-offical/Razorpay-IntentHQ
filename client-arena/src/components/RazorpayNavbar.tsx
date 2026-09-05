@@ -84,10 +84,10 @@ export default function RazorpayNavbar() {
               <path d="M34.5 49.5L40.5 32L61.5 32L55.5 49.5L34.5 49.5Z" fill="#3395FF" />
             </svg>
             <div className="flex items-baseline space-x-1.5">
-              <span className="font-extrabold text-xl tracking-tight text-white font-sans">
+              <span className="font-extrabold text-xl tracking-[-0.02em] text-white font-sans">
                 Razorpay
               </span>
-              <span className="font-bold text-xl tracking-tight text-[#3395FF]">
+              <span className="font-bold text-xl tracking-[-0.02em] text-[#3395FF]">
                 Intent<span className="text-[#00D09C]">HQ</span>
               </span>
             </div>

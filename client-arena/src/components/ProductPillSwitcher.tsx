@@ -139,10 +139,10 @@ export default function ProductPillSwitcher() {
           <span className="text-xs font-bold uppercase tracking-widest text-[#0A7AFF] font-mono">
             Modular Financial Infrastructure
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0C2451] tracking-tight mt-2 font-sans">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0C2451] tracking-[-0.02em] mt-2 font-sans">
             One Unified Platform for All Financial Operations
           </h2>
-          <p className="text-base text-[#4A4A4A] mt-3">
+          <p className="text-[16px] sm:text-[17px] text-[#4A4A4A] mt-3 leading-[1.6]">
             Whether accepting payments from human buyers, autonomous AI agents, or disbursing global payouts, Razorpay provides mission-critical reliability.
           </p>
         </div>
@@ -189,18 +189,18 @@ export default function ProductPillSwitcher() {
                 <span>{activeContent.tagline}</span>
               </div>
 
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-[#0C2451] tracking-tight font-sans">
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-[#0C2451] tracking-[-0.02em] font-sans">
                 {activeContent.title}
               </h3>
 
-              <p className="text-base text-[#4A4A4A] leading-relaxed">
+              <p className="text-[16px] sm:text-[17px] text-[#4A4A4A] leading-[1.6]">
                 {activeContent.subtitle}
               </p>
 
               {/* Bullet Features */}
               <div className="space-y-3 pt-2">
                 {activeContent.features.map((feat: string, fIdx: number) => (
-                  <div key={fIdx} className="flex items-start space-x-3 text-sm text-[#4A4A4A]">
+                  <div key={fIdx} className="flex items-start space-x-3 text-[15px] sm:text-[16px] text-[#4A4A4A] leading-[1.6]">
                     <CheckCircle2 className="w-5 h-5 text-[#00D09C] flex-shrink-0 mt-0.5" />
                     <span>{feat}</span>
                   </div>

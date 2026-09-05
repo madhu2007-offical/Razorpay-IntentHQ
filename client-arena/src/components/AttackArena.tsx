@@ -204,7 +204,7 @@ export default function AttackArena({ intentToken, onVerificationComplete }: Att
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <h2 className="text-lg font-bold text-white tracking-tight">
+              <h2 className="text-lg font-bold text-white tracking-[-0.02em]">
                 Red-Team Live Arena
               </h2>
               <span className="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-[#00D09C]/15 text-[#00D09C] border border-[#00D09C]/30 uppercase">

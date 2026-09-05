@@ -103,7 +103,7 @@ export default function MerkleProofViewer({ lastResult, orderId }: MerkleProofVi
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <h2 className="text-lg font-bold text-white tracking-tight">
+              <h2 className="text-lg font-bold text-white tracking-[-0.02em]">
                 RFC 6962 Merkle Proof Drawer
               </h2>
               <span className="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-[#9B51E0]/15 text-[#BB6BD9] border border-[#9B51E0]/30 uppercase">

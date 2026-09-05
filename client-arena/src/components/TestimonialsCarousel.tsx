@@ -61,10 +61,10 @@ export default function TestimonialsCarousel() {
             <span className="text-xs font-bold uppercase tracking-widest text-[#0A7AFF] font-mono">
               Proven In Production
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0C2451] tracking-tight mt-2 font-sans">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0C2451] tracking-[-0.02em] mt-2 font-sans">
               Trusted by India&apos;s Leading Engineering Leaders
             </h2>
-            <p className="text-base text-[#4A4A4A] mt-2">
+            <p className="text-[16px] sm:text-[17px] text-[#4A4A4A] mt-2 leading-[1.6]">
               Hear how top FinTech and e-commerce enterprises rely on Razorpay IntentHQ for autonomous agent security.
             </p>
           </div>
@@ -107,7 +107,7 @@ export default function TestimonialsCarousel() {
                   <Quote className="w-8 h-8 text-[#CBD5E1]/60" />
                 </div>
 
-                <p className="text-sm sm:text-base text-[#4A4A4A] leading-relaxed italic mb-6">
+                <p className="text-[15px] sm:text-[16px] text-[#4A4A4A] leading-[1.6] italic mb-6">
                   &ldquo;{t.quote}&rdquo;
                 </p>
               </div>

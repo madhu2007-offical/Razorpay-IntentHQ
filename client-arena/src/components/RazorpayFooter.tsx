@@ -71,7 +71,7 @@ export default function RazorpayFooter() {
               <path d="M34.5 49.5L40.5 32L61.5 32L55.5 49.5L34.5 49.5Z" fill="#3395FF" />
             </svg>
             <div>
-              <div className="text-xl font-extrabold tracking-tight">
+              <div className="text-xl font-extrabold tracking-[-0.02em]">
                 Razorpay <span className="text-[#3395FF]">Intent<span className="text-[#00D09C]">HQ</span></span>
               </div>
               <p className="text-xs text-[#94A3B8]">

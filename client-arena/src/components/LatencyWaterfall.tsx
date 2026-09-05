@@ -19,7 +19,7 @@ export default function LatencyWaterfall({ result }: LatencyWaterfallProps) {
             <Activity className="w-5 h-5" />
           </div>
           <div className="text-left">
-            <h2 className="text-lg font-bold text-white tracking-tight">Latency Waterfall Telemetry</h2>
+            <h2 className="text-lg font-bold text-white tracking-[-0.02em]">Latency Waterfall Telemetry</h2>
             <p className="text-xs text-[#93A4D0]">Real-time microsecond instrumentation & SLA audit</p>
           </div>
         </div>
@@ -83,7 +83,7 @@ export default function LatencyWaterfall({ result }: LatencyWaterfallProps) {
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <h2 className="text-lg font-bold text-white tracking-tight">
+              <h2 className="text-lg font-bold text-white tracking-[-0.02em]">
                 Latency Waterfall
               </h2>
               <span className="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-[#00D09C]/15 text-[#00D09C] border border-[#00D09C]/30 uppercase">

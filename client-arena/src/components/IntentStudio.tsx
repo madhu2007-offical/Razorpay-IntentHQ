@@ -114,7 +114,7 @@ export default function IntentStudio({ onTokenGenerated, activeToken, activeClai
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <h2 className="text-lg font-bold text-white tracking-tight">
+              <h2 className="text-lg font-bold text-white tracking-[-0.02em]">
                 Intent Studio
               </h2>
               <span className="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-[#0B72E7]/15 text-[#3395FF] border border-[#0B72E7]/30 uppercase">

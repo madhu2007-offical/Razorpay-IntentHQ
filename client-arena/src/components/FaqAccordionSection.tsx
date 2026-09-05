@@ -44,10 +44,10 @@ export default function FaqAccordionSection() {
           <span className="text-xs font-bold uppercase tracking-widest text-[#0A7AFF] font-mono">
             Frequently Asked Questions
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0C2451] tracking-tight mt-2 font-sans">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0C2451] tracking-[-0.02em] mt-2 font-sans">
             Everything You Need to Know About IntentHQ
           </h2>
-          <p className="text-base text-[#4A4A4A] mt-3">
+          <p className="text-[16px] sm:text-[17px] text-[#4A4A4A] mt-3 leading-[1.6]">
             Clear technical explanations on our neuro-symbolic architecture, cryptographic guarantees, and latency SLA.
           </p>
         </div>
@@ -62,7 +62,7 @@ export default function FaqAccordionSection() {
               >
                 <button
                   onClick={() => toggle(idx)}
-                  className="w-full p-6 text-left flex items-center justify-between gap-4 font-semibold text-base text-[#0C2451] hover:text-[#0A7AFF] transition-colors"
+                  className="w-full p-6 text-left flex items-center justify-between gap-4 font-bold text-[16px] sm:text-[17px] text-[#0C2451] tracking-[-0.01em] hover:text-[#0A7AFF] transition-colors"
                 >
                   <span className="leading-snug">{faq.q}</span>
                   <div
@@ -75,7 +75,7 @@ export default function FaqAccordionSection() {
                 </button>
 
                 {isOpen && (
-                  <div className="px-6 pb-6 text-sm text-[#4A4A4A] leading-relaxed border-t border-[#E2E8F0]/60 pt-4 bg-white animate-fade-in">
+                  <div className="px-6 pb-6 text-[15px] sm:text-[16px] text-[#4A4A4A] leading-[1.6] border-t border-[#E2E8F0]/60 pt-4 bg-white animate-fade-in">
                     {faq.a}
                   </div>
                 )}

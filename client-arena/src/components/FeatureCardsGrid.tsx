@@ -69,10 +69,10 @@ export default function FeatureCardsGrid() {
           <span className="text-xs font-bold uppercase tracking-widest text-[#0A7AFF] font-mono">
             Engineered For Mission-Critical Scale
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0C2451] tracking-tight mt-2 font-sans">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0C2451] tracking-[-0.02em] mt-2 font-sans">
             Six Pillars of Zero-Trust Agentic Commerce
           </h2>
-          <p className="text-base text-[#4A4A4A] mt-3">
+          <p className="text-[16px] sm:text-[17px] text-[#4A4A4A] mt-3 leading-[1.6]">
             Designed by FinTech architects to protect merchants and autonomous purchasing agents from financial drift, injection attacks, and spec downgrades.
           </p>
         </div>
@@ -95,10 +95,10 @@ export default function FeatureCardsGrid() {
                     </span>
                   </div>
 
-                  <h3 className="text-lg font-bold text-[#0C2451] mb-2.5 font-sans group-hover:text-[#0A7AFF] transition-colors">
+                  <h3 className="text-lg font-bold text-[#0C2451] mb-2.5 font-sans tracking-[-0.02em] group-hover:text-[#0A7AFF] transition-colors">
                     {f.title}
                   </h3>
-                  <p className="text-sm text-[#4A4A4A] leading-relaxed">
+                  <p className="text-[15px] sm:text-[16px] text-[#4A4A4A] leading-[1.6]">
                     {f.desc}
                   </p>
                 </div>

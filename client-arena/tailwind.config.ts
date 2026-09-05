@@ -35,16 +35,13 @@ const config: Config = {
       },
       fontFamily: {
         sans: [
-          "Inter",
+          '"Inter"',
           "-apple-system",
-          "BlinkMacSystemFont",
-          "Segoe UI",
-          "Roboto",
-          "Helvetica Neue",
+          '"Segoe UI"',
           "sans-serif",
         ],
         mono: [
-          "JetBrains Mono",
+          '"JetBrains Mono"',
           "SFMono-Regular",
           "Menlo",
           "Monaco",
@@ -52,6 +49,13 @@ const config: Config = {
           "Liberation Mono",
           "monospace",
         ],
+      },
+      letterSpacing: {
+        headline: "-0.02em",
+        tight: "-0.02em",
+      },
+      lineHeight: {
+        body: "1.6",
       },
       boxShadow: {
         "razor-btn": "0 4px 18px 0 rgba(10, 122, 255, 0.38)",
