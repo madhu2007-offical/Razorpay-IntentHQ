@@ -1,12 +1,17 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { ChevronDown, ArrowRight, ShieldCheck, ExternalLink, Menu, X } from "lucide-react";
+import Link from "next/link";
+import { ChevronDown, ArrowRight, ShieldCheck, ExternalLink, Menu, X, LogOut, Copy, Check, Key } from "lucide-react";
+import { useAuth } from "../lib/AuthContext";
 
 export default function RazorpayNavbar() {
+  const { user, logout, isSandbox, toggleSandbox } = useAuth();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [userMenuOpen, setUserMenuOpen] = useState(false);
+  const [copiedKey, setCopiedKey] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -167,23 +172,106 @@ export default function RazorpayNavbar() {
           >
             API v1 Docs
           </a>
-          <button
-            onClick={() => {
-              document.getElementById("interactive-arena")?.scrollIntoView({ behavior: "smooth" });
-            }}
-            className="text-sm font-semibold text-white hover:text-[#3395FF] px-3.5 py-2 rounded-lg transition-colors"
-          >
-            Login
-          </button>
-          <button
-            onClick={() => {
-              document.getElementById("interactive-arena")?.scrollIntoView({ behavior: "smooth" });
-            }}
-            className="razor-btn-primary px-4 py-2 rounded-lg text-sm font-bold flex items-center space-x-1.5 shadow-md shadow-[#0A7AFF]/30"
-          >
-            <span>Sign Up Now</span>
-            <ArrowRight className="w-4 h-4" />
-          </button>
+
+          {user ? (
+            <div className="relative">
+              <button
+                onClick={() => setUserMenuOpen(!userMenuOpen)}
+                className="flex items-center space-x-2.5 bg-[#10275D] border border-[#1E3B82] hover:border-[#3395FF] px-3 py-1.5 rounded-full transition-all text-left"
+              >
+                <img
+                  src={user.avatar || `https://api.dicebear.com/7.x/initials/svg?seed=${encodeURIComponent(user.name)}`}
+                  alt={user.name}
+                  className="w-7 h-7 rounded-full object-cover border border-[#0A7AFF]"
+                />
+                <div className="hidden md:block">
+                  <div className="text-xs font-bold text-white max-w-[110px] truncate leading-tight">
+                    {user.name}
+                  </div>
+                  <div className="text-[10px] text-[#00D09C] font-mono leading-none">
+                    {isSandbox ? "TEST MODE" : "LIVE"}
+                  </div>
+                </div>
+                <ChevronDown className={`w-3.5 h-3.5 text-[#94A3B8] transition-transform ${userMenuOpen ? "rotate-180" : ""}`} />
+              </button>
+
+              {userMenuOpen && (
+                <div className="absolute right-0 mt-2 w-72 bg-[#10275D] border border-[#1E3B82] rounded-2xl p-4 shadow-2xl space-y-3 z-50 animate-fade-in text-white">
+                  <div className="border-b border-[#1E3B82] pb-3">
+                    <div className="font-bold text-sm text-white">{user.name}</div>
+                    <div className="text-xs text-[#94A3B8] truncate">{user.email}</div>
+                    <span className="inline-block text-[10px] font-mono px-2 py-0.5 rounded-full bg-[#00D09C]/15 text-[#00D09C] border border-[#00D09C]/30 mt-1.5">
+                      {user.role}
+                    </span>
+                  </div>
+
+                  <div className="space-y-1.5">
+                    <div className="text-[11px] font-mono text-[#94A3B8] flex items-center justify-between">
+                      <span>Razorpay API Key</span>
+                      <button
+                        onClick={() => {
+                          if (user?.apiKey) {
+                            navigator.clipboard.writeText(user.apiKey);
+                            setCopiedKey(true);
+                            setTimeout(() => setCopiedKey(false), 2000);
+                          }
+                        }}
+                        className="text-[#3395FF] hover:underline flex items-center gap-1"
+                      >
+                        {copiedKey ? <Check className="w-3 h-3 text-[#00D09C]" /> : <Copy className="w-3 h-3" />}
+                        <span>{copiedKey ? "Copied" : "Copy"}</span>
+                      </button>
+                    </div>
+                    <div className="bg-[#081A3A] p-2 rounded-xl text-[11px] font-mono text-[#CBD5E1] truncate border border-[#1E3B82]">
+                      {user.apiKey}
+                    </div>
+                  </div>
+
+                  <div className="pt-2 border-t border-[#1E3B82] flex items-center justify-between">
+                    <div className="flex items-center space-x-2">
+                      <span className={`w-2 h-2 rounded-full ${isSandbox ? "bg-[#FFB800] animate-pulse" : "bg-[#00D09C]"}`} />
+                      <span className="text-xs font-mono">{isSandbox ? "Sandbox Mode" : "Live Production"}</span>
+                    </div>
+                    <button
+                      onClick={toggleSandbox}
+                      className="text-[11px] text-[#3395FF] hover:underline font-mono font-bold"
+                    >
+                      Switch
+                    </button>
+                  </div>
+
+                  <div className="pt-2 border-t border-[#1E3B82]">
+                    <button
+                      onClick={() => {
+                        setUserMenuOpen(false);
+                        logout();
+                      }}
+                      className="w-full py-2 px-3 rounded-xl bg-[#FF3366]/15 hover:bg-[#FF3366]/25 text-[#FF3366] text-xs font-bold flex items-center justify-center space-x-2 transition-colors"
+                    >
+                      <LogOut className="w-3.5 h-3.5" />
+                      <span>Sign Out</span>
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
+          ) : (
+            <>
+              <Link
+                href="/login"
+                className="text-sm font-semibold text-white hover:text-[#3395FF] px-3.5 py-2 rounded-lg transition-colors"
+              >
+                Login
+              </Link>
+              <Link
+                href="/signup"
+                className="razor-btn-primary px-4 py-2 rounded-lg text-sm font-bold flex items-center space-x-1.5 shadow-md shadow-[#0A7AFF]/30"
+              >
+                <span>Sign Up Now</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </>
+          )}
         </div>
 
         {/* Mobile Hamburger Toggle */}
@@ -200,6 +288,48 @@ export default function RazorpayNavbar() {
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
         <div className="lg:hidden bg-[#0C2451] border-b border-[#1E3B82] px-4 pt-3 pb-6 space-y-3">
+          {user ? (
+            <div className="p-3 bg-[#10275D] rounded-xl border border-[#1E3B82] flex items-center justify-between mb-2">
+              <div className="flex items-center space-x-2.5">
+                <img
+                  src={user.avatar || `https://api.dicebear.com/7.x/initials/svg?seed=${encodeURIComponent(user.name)}`}
+                  alt={user.name}
+                  className="w-8 h-8 rounded-full border border-[#0A7AFF]"
+                />
+                <div>
+                  <div className="text-xs font-bold text-white">{user.name}</div>
+                  <div className="text-[10px] text-[#94A3B8]">{user.email}</div>
+                </div>
+              </div>
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  logout();
+                }}
+                className="text-xs text-[#FF3366] font-bold"
+              >
+                Logout
+              </button>
+            </div>
+          ) : (
+            <div className="flex gap-2 pb-2">
+              <Link
+                href="/login"
+                onClick={() => setMobileMenuOpen(false)}
+                className="w-1/2 py-2 rounded-lg border border-[#1E3B82] text-xs font-bold text-white text-center"
+              >
+                Login
+              </Link>
+              <Link
+                href="/signup"
+                onClick={() => setMobileMenuOpen(false)}
+                className="w-1/2 razor-btn-primary py-2 rounded-lg text-xs font-bold text-center"
+              >
+                Sign Up
+              </Link>
+            </div>
+          )}
+
           {navItems.map((item, i) => (
             <div key={i}>
               <div className="font-semibold text-white py-1.5 text-sm">{item.name}</div>
