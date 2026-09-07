@@ -1,6 +1,7 @@
 <div align="center">
 
-<img src="https://cdn.simpleicons.org/razorpay/02042B" width="90" alt="Razorpay"/>
+<img src="<img width="3000" height="634" alt="image" src="https://github.com/user-attachments/assets/da82c9d6-e763-4c4b-8b3a-5e4af5a1181f" />
+" width="90" alt="Razorpay"/>
 
 <br/>
 
